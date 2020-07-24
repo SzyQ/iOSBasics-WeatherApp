@@ -12,8 +12,6 @@ class WeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let apiKey = "b407aacae62b2e82d6f2d9764b28008f"
     }
-
 
 }

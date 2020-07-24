@@ -17,7 +17,6 @@
 		961DC23624BF960B00188350 /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961DC23524BF960B00188350 /* WeatherAppTests.swift */; };
 		961DC24124BF960C00188350 /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961DC24024BF960C00188350 /* WeatherAppUITests.swift */; };
 		9697AC1424C2E423004BE7B7 /* Translations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9697AC1624C2E423004BE7B7 /* Translations.strings */; };
-		9697AC1924C30352004BE7B7 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9697AC1824C30352004BE7B7 /* View.xib */; };
 		96B08AB324CB65CE00089796 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B08AB224CB65CE00089796 /* WeatherRepository.swift */; };
 		96B08BC324CB6B0000089796 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B08BC224CB6B0000089796 /* Build.swift */; };
 		DBCC2D5D170A36839787DCC4 /* Pods_WeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC423E0884EA4EE84C88CA5 /* Pods_WeatherAppTests.framework */; };
@@ -62,7 +61,6 @@
 		961DC24224BF960C00188350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9697AC1524C2E423004BE7B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Translations.strings; sourceTree = "<group>"; };
 		9697AC1724C2E43D004BE7B7 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Translations.strings"; sourceTree = "<group>"; };
-		9697AC1824C30352004BE7B7 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		96B08AB224CB65CE00089796 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
 		96B08BC224CB6B0000089796 /* Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
 		E97B2658AC5914D61991D169 /* Pods-WeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherAppTests/Pods-WeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 		961DC21024BF960600188350 = {
 			isa = PBXGroup;
 			children = (
-				9697AC1824C30352004BE7B7 /* View.xib */,
 				961DC21B24BF960600188350 /* WeatherApp */,
 				961DC23424BF960B00188350 /* WeatherAppTests */,
 				961DC23F24BF960C00188350 /* WeatherAppUITests */,
@@ -331,7 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				961DC22B24BF960B00188350 /* LaunchScreen.storyboard in Resources */,
-				9697AC1924C30352004BE7B7 /* View.xib in Resources */,
 				961DC22824BF960B00188350 /* Assets.xcassets in Resources */,
 				9697AC1424C2E423004BE7B7 /* Translations.strings in Resources */,
 				961DC22624BF960600188350 /* Main.storyboard in Resources */,
@@ -634,7 +630,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_FILE = "WeatherApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -652,7 +648,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_FILE = "WeatherApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
