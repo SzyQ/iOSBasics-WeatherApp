@@ -74,5 +74,7 @@
 	<string>$(WEATHER_API_KEY)</string>
 	<key>Maps Api Key</key>
 	<string>$(MAPS_API_KEY)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>I need your location to show you cool things!</string>
 </dict>
 </plist>

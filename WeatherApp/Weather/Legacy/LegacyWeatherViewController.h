@@ -14,9 +14,14 @@
 
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface LegacyWeatherViewController : UIViewController
+@interface LegacyWeatherViewController : UIViewController <CLLocationManagerDelegate> {
+    CLLocationManager *locationManager;
+}
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
+
+- (void)setLocation:(CLLocationCoordinate2D)location;
 
 @end
