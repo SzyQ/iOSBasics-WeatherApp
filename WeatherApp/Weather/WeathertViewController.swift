@@ -8,13 +8,12 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class WeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let apiKey = "b407aacae62b2e82d6f2d9764b28008f"
     }
 
 
 }
-

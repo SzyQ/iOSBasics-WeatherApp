@@ -70,5 +70,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>Weather Api Key</key>
+	<string>$(WEATHER_API_KEY)</string>
+	<key>Maps Api Key</key>
+	<string>$(MAPS_API_KEY)</string>
 </dict>
 </plist>
