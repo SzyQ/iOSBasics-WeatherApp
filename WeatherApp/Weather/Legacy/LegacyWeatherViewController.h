@@ -16,6 +16,8 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import <CoreLocation/CoreLocation.h>
 
+@class GetWeather;
+
 @interface LegacyWeatherViewController : UIViewController <CLLocationManagerDelegate> {
     CLLocationManager *locationManager;
 }

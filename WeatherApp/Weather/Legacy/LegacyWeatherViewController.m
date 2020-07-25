@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LegacyWeatherViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import <WeatherApp-Swift.h>
 
 
 @implementation LegacyWeatherViewController
@@ -46,8 +47,10 @@
     GMSMarker *marker = [GMSMarker new];
     marker.position = location;
     marker.map = _mapView;
+    GetWeather *weather = [GetWeather new];
+    [weather executeWithLocation:location comletion:^(WeatherInfo *info, NSError *error){
+        NSLog(@"Received weather info: %@", info.description);
+    }];
 }
-
-
 
 @end
