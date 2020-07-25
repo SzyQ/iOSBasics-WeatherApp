@@ -14,4 +14,5 @@ class Build: NSObject {
     
     static let WEATHER_API_KEY = Bundle.main.object(forInfoDictionaryKey: "Weather Api Key") as! String
     static let MAPS_API_KEY = Bundle.main.object(forInfoDictionaryKey: "Maps Api Key") as! String
+    static let WEATHER_BASE_URL = Bundle.main.object(forInfoDictionaryKey: "Weather Base Url") as! String
 }
