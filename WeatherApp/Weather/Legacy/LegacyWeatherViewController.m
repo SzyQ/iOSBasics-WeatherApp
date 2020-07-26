@@ -14,9 +14,12 @@
 
 @implementation LegacyWeatherViewController
 
+@synthesize weatherView, mapView;
+
 -(void)viewDidLoad {
     locationManager = [CLLocationManager new];
     locationManager.delegate = self;
+    [weatherView setHidden:true];
     if([CLLocationManager locationServicesEnabled]){
         [locationManager requestLocation];
     }else {
@@ -43,13 +46,19 @@
 
 -(void)setLocation:(CLLocationCoordinate2D)location {
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:location.latitude longitude:location.longitude zoom:10];
-    _mapView.camera = camera;
+    mapView.camera = camera;
     GMSMarker *marker = [GMSMarker new];
     marker.position = location;
-    marker.map = _mapView;
+    marker.map = mapView;
     GetWeather *weather = [GetWeather new];
     [weather executeWithLocation:location comletion:^(WeatherInfo *info, NSError *error){
         NSLog(@"Received weather info: %@", info.description);
+        __weak typeof(self) weakSelf = self;
+        if(weakSelf == nil){
+            return;
+        }
+        [weakSelf.weatherView setupWithInfo:info];
+        [weakSelf.weatherView setHidden:false];
     }];
 }
 

@@ -17,10 +17,12 @@
 #import <CoreLocation/CoreLocation.h>
 
 @class GetWeather;
+@class WeatherUIView;
 
 @interface LegacyWeatherViewController : UIViewController <CLLocationManagerDelegate> {
     CLLocationManager *locationManager;
 }
+@property (weak, nonatomic) IBOutlet WeatherUIView *weatherView;
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 
