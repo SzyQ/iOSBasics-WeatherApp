@@ -19,10 +19,20 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="448"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wra-ua-xFP" customClass="WeatherUIView" customModule="WeatherApp" customModuleProvider="target">
+                                <rect key="frame" x="24" y="516" width="366" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Xrh-8i-NOk"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="wra-ua-xFP" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="24" id="6vE-4b-oQE"/>
+                            <constraint firstItem="wra-ua-xFP" firstAttribute="top" secondItem="Gkk-dr-OTj" secondAttribute="bottom" constant="24" id="JS1-aN-Qc0"/>
                             <constraint firstItem="Gkk-dr-OTj" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="MH1-73-YF7"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="wra-ua-xFP" secondAttribute="trailing" constant="24" id="XT6-fP-rit"/>
                             <constraint firstItem="Gkk-dr-OTj" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="0.5" id="djz-Bz-Ntt"/>
                             <constraint firstItem="Gkk-dr-OTj" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="mlT-ql-y1H"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Gkk-dr-OTj" secondAttribute="trailing" id="oiy-E1-hai"/>
@@ -32,6 +42,7 @@
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="mapView" destination="Gkk-dr-OTj" id="EgR-ci-nPB"/>
+                        <outlet property="weatherView" destination="wra-ua-xFP" id="mhq-5L-w5g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

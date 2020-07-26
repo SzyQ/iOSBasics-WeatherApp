@@ -8,11 +8,11 @@
 
 import Foundation
 
-class WeatherInfo : NSObject {
+@objcMembers class WeatherInfo : NSObject {
     let tempMax: Int
     let tempMin: Int
     let temp: Int
-    let pressure: Double
+    let pressure: Int
     let weatherDescription: String
     let iconURL: String
     let originalJson: String
@@ -21,7 +21,7 @@ class WeatherInfo : NSObject {
         tempMax: Int,
         tempMin: Int,
         temp: Int,
-        pressure: Double,
+        pressure: Int,
         description: String,
         iconURL: String,
         originalJson: String

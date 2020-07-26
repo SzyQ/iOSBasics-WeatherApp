@@ -45,14 +45,14 @@ fileprivate extension NSDictionary {
         let tempMax = main["temp_max"] as! NSNumber
         let tempMin = main["temp_min"] as! NSNumber
         let temp = main["temp"] as! NSNumber
-        let pressure = main["pressure"] as! NSNumber
+        let pressure = main["pressure"] as! Int64
         let weather = self["weather"] as! NSArray
         let weatherInfo = weather.firstObject as! NSDictionary
         let description = weatherInfo["description"] as! String
         let icon = weatherInfo["icon"] as! String
         let iconURL = "https://openweathermap.org/img/w/\(icon).png"
         return WeatherInfo(
-            tempMax: tempMax.intValue, tempMin: tempMin.intValue, temp: temp.intValue, pressure: pressure.doubleValue, description: description, iconURL: iconURL, originalJson: self.description
+            tempMax: tempMax.intValue, tempMin: tempMin.intValue, temp: temp.intValue, pressure: Int(pressure), description: description, iconURL: iconURL, originalJson: self.description
         )
     }
 }
