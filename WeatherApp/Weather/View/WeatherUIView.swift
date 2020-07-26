@@ -35,23 +35,27 @@ class WeatherUIView: UIView {
         addSubview(view)
     }
     
-    @objc func setup(info: WeatherInfo) {
-        guard let url = URL(string: info.iconURL) else { return }
+    fileprivate func loadImage(_ url: URL) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil {
+            if let error = error {
                 print("Failed fetching image:", error)
                 return
             }
-
+            
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 print("Not a proper HTTPURLResponse or statusCode")
                 return
             }
-
-            DispatchQueue.main.async {
-                self.weaherIcon.image = UIImage(data: data!)
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.weaherIcon.image = UIImage(data: data!)
             }
         }.resume()
+    }
+    
+    @objc func setup(info: WeatherInfo) {
+        guard let url = URL(string: info.iconURL) else { return }
+        loadImage(url)
         
         temperature.text = String(format: NSLocalizedString("Weather.Temperature", comment: "a"), info.temp)
         maxTemperature.text = String(format: NSLocalizedString("Weather.Max", comment: "a"), info.tempMax)
