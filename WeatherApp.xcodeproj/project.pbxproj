@@ -17,6 +17,7 @@
 		961DC23624BF960B00188350 /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961DC23524BF960B00188350 /* WeatherAppTests.swift */; };
 		961DC24124BF960C00188350 /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961DC24024BF960C00188350 /* WeatherAppUITests.swift */; };
 		9697AC1424C2E423004BE7B7 /* Translations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9697AC1624C2E423004BE7B7 /* Translations.strings */; };
+		96AEA3C024D2DA9E0092C401 /* LegacyWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AEA3BF24D2DA9E0092C401 /* LegacyWeatherViewController.m */; };
 		96B08AB324CB65CE00089796 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B08AB224CB65CE00089796 /* WeatherRepository.swift */; };
 		96B08BC324CB6B0000089796 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B08BC224CB6B0000089796 /* Build.swift */; };
 		DBCC2D5D170A36839787DCC4 /* Pods_WeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC423E0884EA4EE84C88CA5 /* Pods_WeatherAppTests.framework */; };
@@ -61,6 +62,9 @@
 		961DC24224BF960C00188350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9697AC1524C2E423004BE7B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Translations.strings; sourceTree = "<group>"; };
 		9697AC1724C2E43D004BE7B7 /* pl-PL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pl-PL"; path = "pl-PL.lproj/Translations.strings"; sourceTree = "<group>"; };
+		96AEA3BD24D2DA9D0092C401 /* WeatherApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeatherApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		96AEA3BE24D2DA9E0092C401 /* LegacyWeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LegacyWeatherViewController.h; sourceTree = "<group>"; };
+		96AEA3BF24D2DA9E0092C401 /* LegacyWeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LegacyWeatherViewController.m; sourceTree = "<group>"; };
 		96B08AB224CB65CE00089796 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
 		96B08BC224CB6B0000089796 /* Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
 		E97B2658AC5914D61991D169 /* Pods-WeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherAppTests/Pods-WeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +172,16 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		96AEA3BC24D2D9B70092C401 /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				96AEA3BE24D2DA9E0092C401 /* LegacyWeatherViewController.h */,
+				96AEA3BF24D2DA9E0092C401 /* LegacyWeatherViewController.m */,
+				96AEA3BD24D2DA9D0092C401 /* WeatherApp-Bridging-Header.h */,
+			);
+			path = Legacy;
+			sourceTree = "<group>";
+		};
 		96B08AAD24CB657E00089796 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +218,7 @@
 		96B08AB124CB65A900089796 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				96AEA3BC24D2D9B70092C401 /* Legacy */,
 				961DC22024BF960600188350 /* WeathertViewController.swift */,
 			);
 			path = Weather;
@@ -290,6 +305,7 @@
 				TargetAttributes = {
 					961DC21824BF960600188350 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1160;
 					};
 					961DC23024BF960B00188350 = {
 						CreatedOnToolsVersion = 11.5;
@@ -438,6 +454,7 @@
 			files = (
 				961DC22124BF960600188350 /* WeathertViewController.swift in Sources */,
 				961DC21D24BF960600188350 /* AppDelegate.swift in Sources */,
+				96AEA3C024D2DA9E0092C401 /* LegacyWeatherViewController.m in Sources */,
 				96B08BC324CB6B0000089796 /* Build.swift in Sources */,
 				96B08AB324CB65CE00089796 /* WeatherRepository.swift in Sources */,
 				961DC21F24BF960600188350 /* SceneDelegate.swift in Sources */,
@@ -629,6 +646,7 @@
 			baseConfigurationReference = 943CC163FC716E2792F5A9FB /* Pods-WeatherApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "WeatherApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -637,6 +655,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.klimaszewski.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeatherApp/Weather/Legacy/WeatherApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -647,6 +667,7 @@
 			baseConfigurationReference = 68BFC0DBE67A2207FEE26F7C /* Pods-WeatherApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "WeatherApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -655,6 +676,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.klimaszewski.WeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WeatherApp/Weather/Legacy/WeatherApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
