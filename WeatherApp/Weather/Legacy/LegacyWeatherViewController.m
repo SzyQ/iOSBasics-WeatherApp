@@ -8,6 +8,8 @@
 
 #import "LegacyWeatherViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import <WeatherApp-Swift.h>
+
 
 //@interface LegacyWeatherViewController (MyAwesomeExtension)
 //
@@ -17,21 +19,25 @@
 
 @implementation LegacyWeatherViewController
 
-@synthesize mapView;
+@synthesize mapView, weatherView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     locationManager = [CLLocationManager new];
     locationManager.delegate = self;
     
-    if([locationManager locationServicesEnabled]) {
+    [locationManager requestWhenInUseAuthorization];
+    
+    if([CLLocationManager locationServicesEnabled]) {
         [locationManager requestLocation];
     } else {
         CLLocationDegrees latitude = 50.0836041;
         CLLocationDegrees longitude = 19.9738516;
         [self setLocation:latitude longitude:longitude];
-        [locationManager requestWhenInUseAuthorization];
+        
     }
+    
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
@@ -53,15 +59,31 @@
 
 -(void)setLocation:(CLLocationDegrees)latitude longitude:(CLLocationDegrees)longitude {
     mapView.camera = [GMSCameraPosition cameraWithLatitude:latitude longitude:longitude zoom:11];
+    GMSMarker *marker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake(latitude, longitude)];
+    marker.map = mapView;
+    
+    GetWeatherInfo *getWeatherInfo = [GetWeatherInfo new];
+    [getWeatherInfo invokeWithLatitude:latitude longitude:longitude completion:^(WeatherInfo *weatherInfo, NSError *error) {
+        __weak typeof(self) vc = self;
+        if(vc == nil){
+            return;
+        }
+        [vc.weatherView setInfoWithWeatherInfo:weatherInfo];
+    }];
+    
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier  isEqual: @"introduction"]){
+        IntroductionViewController *vc = (IntroductionViewController *)segue.destinationViewController;
+        vc.name = @"Hi, I'm Simon!";
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

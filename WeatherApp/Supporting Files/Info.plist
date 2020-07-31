@@ -76,5 +76,7 @@
 	<string>$(MAPS_API_KEY)</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>I need your location to display map properly!</string>
+	<key>Weather Base Url</key>
+	<string>https://api.openweathermap.org</string>
 </dict>
 </plist>

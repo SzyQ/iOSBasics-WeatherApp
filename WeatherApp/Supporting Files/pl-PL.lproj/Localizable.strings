@@ -6,3 +6,9 @@
   Copyright © 2020 Szymon Klimaszewski. All rights reserved.
 */
 "Custom.Welcome" = "Witaj!";
+
+"Weather.Temperature" = "%dK";
+"Weather.Min" = "Min: %dK";
+"Weather.Max" = "Maks: %dK";
+"Weather.Pressure" = "Ciśnienie: %dK";
+"Weather.Descirption" = "Opis: %dK";

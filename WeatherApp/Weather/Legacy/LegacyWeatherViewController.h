@@ -10,11 +10,15 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import <CoreLocation/CoreLocation.h>
 
+@class WeatherUIView;
+@class GetWeatherInfo;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LegacyWeatherViewController : UIViewController <CLLocationManagerDelegate>{
     CLLocationManager *locationManager;
 }
+@property (weak, nonatomic) IBOutlet WeatherUIView *weatherView;
 
 @property (weak, nonatomic) IBOutlet GMSMapView *mapView;
 

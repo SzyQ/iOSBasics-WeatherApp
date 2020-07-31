@@ -1,0 +1,14 @@
+/* 
+  Translations.strings
+  WeatherApp
+
+  Created by Work on 18/07/2020.
+  Copyright © 2020 Szymon Klimaszewski. All rights reserved.
+*/
+"Custom.Welcome" = "Hello!";
+
+"Weather.Temperature" = "%dK";
+"Weather.Min" = "Min: %dK";
+"Weather.Max" = "Max: %dK";
+"Weather.Pressure" = "Pressure: %dK";
+"Weather.Descirption" = "Description: %dK";

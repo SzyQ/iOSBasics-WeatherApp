@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import CoreLocation
+
+protocol WeatherRepository {
+    
+    func getWeatherInfo(latitude: CLLocationDegrees, longitude: CLLocationDegrees,  completion: @escaping (WeatherInfo?, Error?) -> Void)
+}
